@@ -10,6 +10,36 @@ namespace Exercise
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine("choose the task. enter the number.");
+            string task = Console.ReadLine();
+
+            switch (task)
+            {
+                case "1":
+                    TaskOne();
+                    break;
+
+                case "2":
+                    TaskTwo();
+                    break;
+
+                case "3":
+                    TaskThree();
+                    break;
+
+                default:
+                    Console.WriteLine("the task doesn't exist.");
+                    break;
+            }
+
+            Console.ReadLine();
+
+            
+        }
+
+        public static void TaskOne()
+        {
             Console.Write("what is your name? ");
             string name = Console.ReadLine();
             Console.Write("what is your age? ");
@@ -24,25 +54,48 @@ namespace Exercise
             Console.WriteLine("your gender is " + gender + ".");
             Console.WriteLine("your address is " + address + ".");
             Console.WriteLine("I'll be watching you. hahahaha.");
+        }
 
-            Console.ReadLine();
-
+        public static void TaskTwo()
+        {
             Console.WriteLine("give me 2 numbers.");
             int number1 = int.Parse(Console.ReadLine());
             int number2 = int.Parse(Console.ReadLine());
-            int add = number1 + number2;
-            int sub = number1 - number2;
-            int mul = number1 * number2;
-            int div = number1 / number2;
-            Console.WriteLine();
-            Console.WriteLine(number1 + " + " + number2 + " = " + add);
-            Console.WriteLine(number1 + " - " + number2 + " = " + sub);
-            Console.WriteLine(number1 + " * " + number2 + " = " + mul);
-            Console.WriteLine(number1 + " / " + number2 + " = " + div);
+            Console.WriteLine("what do you want me to do with these? (+, -, * or /)");
+            string operation = Console.ReadLine();
+            int answer;
+            switch (operation)
+            {
+                case "+":
+                    answer = number1 + number2;
+                    Console.WriteLine(number1 + " + " + number2 + " = " + answer);
+                    break;
+
+                case "-":
+                    answer = number1 - number2;
+                    Console.WriteLine(number1 + " - " + number2 + " = " + answer);
+                    break;
+
+                case "*":
+                    answer = number1 * number2;
+                    Console.WriteLine(number1 + " * " + number2 + " = " + answer);
+                    break;
+
+                case "/":
+                    answer = number1 / number2;
+                    Console.WriteLine(number1 + " / " + number2 + " = " + answer);
+                    break;
+
+                default:
+                    Console.WriteLine("the operation doesn't exist.");
+                    break;
+            }
+
             Console.WriteLine("your welcome.");
+        }
 
-            Console.ReadLine();
-
+        public static void TaskThree()
+        {
             Console.Write("what is your first name? ");
             string first = Console.ReadLine();
             Console.Write("what is your last name? ");
@@ -50,8 +103,6 @@ namespace Exercise
             Console.WriteLine();
             Console.WriteLine("you are " + first + " " + last + ".");
             Console.WriteLine("good to know.");
-
-            Console.ReadLine();
         }
     }
 }
